@@ -1,14 +1,14 @@
 #!/bin/bash
-# 빌드 파일의 이름이 콘텐츠와 다르다면 다음 줄의 .jar 파일 이름을 수정하시기 바랍니다
-BUILD_JAR=$(ls /home/ubuntu/action/build/libs/practice-githubAction-deploy-0.0.1-SNAPSHO.jar)
+# 빌드 파일의 이름이 콘텐츠와 다르다면 다음 줄의 .jar 파일 이름을 수정하시기 바랍니다.
+BUILD_JAR=$(ls /home/ubuntu/action/build/libs/practice-githubAction-deploy-0.0.1-SNAPSHOT.jar)
 JAR_NAME=$(basename $BUILD_JAR)
 
 echo "> 현재 시간: $(date)" >> /home/ubuntu/action/deploy.log
 
-echo "> build 파일명: " $JAR_NAME >> /home/ubuntu/action/deploy.log
+echo "> build 파일명: $JAR_NAME" >> /home/ubuntu/action/deploy.log
 
 echo "> build 파일 복사" >> /home/ubuntu/action/deploy.log
-DEPLOY_PATH=/home/ubuntu/action
+DEPLOY_PATH=/home/ubuntu/action/
 cp $BUILD_JAR $DEPLOY_PATH
 
 echo "> 현재 실행중인 애플리케이션 pid 확인" >> /home/ubuntu/action/deploy.log

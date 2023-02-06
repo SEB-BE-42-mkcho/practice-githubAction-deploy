@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source:  /
     destination: /home/ubuntu/action #배포되는 위치
     overwrite: yes
 
